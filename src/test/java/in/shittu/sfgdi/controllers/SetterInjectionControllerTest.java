@@ -1,10 +1,8 @@
 package in.shittu.sfgdi.controllers;
 
-import in.shittu.sfgdi.services.GreetingsServiceImpl;
+import in.shittu.sfgdi.services.ConstructorGreetingService;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
-
-import static org.junit.jupiter.api.Assertions.*;
 
 class SetterInjectionControllerTest {
 
@@ -13,7 +11,7 @@ class SetterInjectionControllerTest {
     @BeforeEach
     void setup(){
         controller = new SetterInjectionController();
-        controller.setGreetingsService(new GreetingsServiceImpl());
+        controller.setGreetingsService(new ConstructorGreetingService());
     }
 
     @Test

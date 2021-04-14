@@ -3,11 +3,9 @@ package in.shittu.sfgdi.config;
 import in.shittu.sfgdi.repositories.EnglishGreetingRepository;
 import in.shittu.sfgdi.repositories.EnglishGreetingRepositoryImpl;
 import in.shittu.sfgdi.services.*;
-import org.springframework.context.annotation.Bean;
-import org.springframework.context.annotation.Configuration;
-import org.springframework.context.annotation.Primary;
-import org.springframework.context.annotation.Profile;
+import org.springframework.context.annotation.*;
 
+@ImportResource("classpath:sfgdi-config.xml")
 @Configuration
 public class GreetingServiceConfig {
 
@@ -40,10 +38,10 @@ public class GreetingServiceConfig {
 //        return new ConstructorGreetingService();
 //    }
 
-    @Bean
-    PropertyGreetingService propertyGreetingService(){
-        return new PropertyGreetingService();
-    }
+//    @Bean
+//    PropertyGreetingService propertyGreetingService(){
+//        return new PropertyGreetingService();
+//    }
 
 //    @Bean
 //    SetterGreetingService setterGreetingService(){

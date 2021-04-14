@@ -35,18 +35,33 @@ public class GreetingServiceConfig {
         return new PrimaryGreetingService();
     }
 
-    @Bean
-    ConstructorGreetingService constructorGreetingService(){
-        return new ConstructorGreetingService();
-    }
+//    @Bean
+//    ConstructorGreetingService constructorGreetingService(){
+//        return new ConstructorGreetingService();
+//    }
 
     @Bean
     PropertyGreetingService propertyGreetingService(){
         return new PropertyGreetingService();
     }
 
+//    @Bean
+//    SetterGreetingService setterGreetingService(){
+//        return new SetterGreetingService();
+//    }
+
     @Bean
-    SetterGreetingService setterGreetingService(){
-        return new SetterGreetingService();
+    GreetingServiceFactory greetingServiceFactory(){
+        return new GreetingServiceFactory();
+    }
+
+    @Bean
+    GreetingsService constructorGreetingService(GreetingServiceFactory greetingServiceFactory){
+        return greetingServiceFactory.getGreetingService("Constructor");
+    }
+
+    @Bean
+    GreetingsService setterGreetingService(GreetingServiceFactory greetingServiceFactory){
+        return greetingServiceFactory.getGreetingService("Setter");
     }
 }

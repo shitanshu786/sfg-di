@@ -1,8 +1,17 @@
 spring:
   profiles:
-    active: EN
+    active: EN,prod
 
 ds:
   username: shittu_yml
   password: password_yml
   jdbcurl: fakeurl_yml
+
+---
+spring:
+  profiles: prod
+
+ds:
+  username: shittu_prod_yml
+  password: password_prod_yml
+  jdbcurl: fakeurl_prod_yml

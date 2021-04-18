@@ -1,5 +1,6 @@
 package in.shittu.sfgdi;
 
+import in.shittu.sfgdi.config.SfgConfiguration;
 import in.shittu.sfgdi.controllers.*;
 import in.shittu.sfgdi.datasource.FakeDataSource;
 import org.springframework.boot.SpringApplication;
@@ -36,6 +37,13 @@ public class SfgDiApplication {
 		System.out.println(fds.getUsername());
 		System.out.println(fds.getPassword());
 		System.out.println(fds.getJdbcUrl());
+
+		System.out.println("------- Config Props Bean");
+		SfgConfiguration sfgConfiguration = ctx.getBean(SfgConfiguration.class);
+		System.out.println(sfgConfiguration.getUsername());
+		System.out.println(sfgConfiguration.getPassword());
+		System.out.println(sfgConfiguration.getJdbcUrl());
+
 	}
 
 }

@@ -1,6 +1,7 @@
 package in.shittu.sfgdi;
 
 import in.shittu.sfgdi.controllers.*;
+import in.shittu.sfgdi.datasource.FakeDataSource;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.ApplicationContext;
@@ -29,6 +30,12 @@ public class SfgDiApplication {
 		System.out.println("----------Constructor");
 		ConstructorInjectionController constructorInjectionController = (ConstructorInjectionController) ctx.getBean("constructorInjectionController");
 		System.out.println(constructorInjectionController.getGreeting());
+
+		System.out.println("-----fakeDatasource");
+		FakeDataSource fds = ctx.getBean("fakeDataSource", FakeDataSource.class);
+		System.out.println(fds.getUsername());
+		System.out.println(fds.getPassword());
+		System.out.println(fds.getJdbcUrl());
 	}
 
 }

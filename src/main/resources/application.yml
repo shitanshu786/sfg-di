@@ -1,0 +1,8 @@
+spring:
+  profiles:
+    active: EN
+
+ds:
+  username: shittu_yml
+  password: password_yml
+  jdbcurl: fakeurl_yml

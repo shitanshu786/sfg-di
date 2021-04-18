@@ -1,0 +1,4 @@
+ds:
+  username: shittu_qa_yml
+  password: password_qa_yml
+  jdbcurl: fakeurl_qa_yml
